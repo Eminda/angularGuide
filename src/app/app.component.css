@@ -4,3 +4,7 @@
 .font-size{
   font-size: x-large;
 }
+.active{
+  color: crimson;
+  font-size: x-large;
+}
