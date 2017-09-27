@@ -1,0 +1,33 @@
+<button (click)="toggleIf()">Change If Parameter</button>
+
+<p *ngIf="ifCondition">
+  angular-directives works!
+</p>
+
+<h3>For Work</h3>
+
+<p *ngFor="let person of people">
+  {{person.name}}
+</p>
+
+<h3>For With Index</h3>
+
+<p *ngFor="let person of people;let i=index">
+  {{person.name+" "+i}}
+</p>
+
+<h3>Swith</h3>
+<h4>Without Switch</h4>
+<app-switch1></app-switch1>
+<app-switch2></app-switch2>
+<app-switch3></app-switch3>
+
+<h4>With Switch</h4>
+<button (click)="toggleSwitch()">Change Switch Value</button>
+<div [ngSwitch]="switchCondition">
+  <app-switch1 *ngSwitchCase="'switch1'"></app-switch1>
+  <app-switch2 *ngSwitchCase="'switch2'"></app-switch2>
+  <app-switch3 *ngSwitchCase="'switch3'"></app-switch3>
+  <span *ngSwitchDefault>Opps No match</span>
+</div>
+
