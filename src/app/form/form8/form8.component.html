@@ -1,0 +1,55 @@
+<h1>Form 8: Reactive Forms with FormGrouping Inside this is</h1>
+<form [formGroup]="myGroup"  (submit)="submitForm(myGroup.value,myGroup.valid)" style="padding-left: 20px">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="name">Name</label>
+    </div>
+    <div class="col-md-5">
+      <input id="name" name="UserName" type="text"  formControlName="userName"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="tel">Tel</label>
+    </div>
+    <div class="col-md-5">
+      <input id="tel" name="telephone" type="text" pattern="[0-9]*" ngModel  formControlName="telephone"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="birthYear">Birth Year</label>
+    </div>
+    <div class="col-md-5">
+      <input id="birthYear" name="BirthYear" type="text"  formControlName="birthYear"/>
+    </div>
+  </div>
+
+  <div formGroupName="address">
+    <div class="row">
+      <div class="col-md-3">
+        <label for="street">Street</label>
+      </div>
+      <div class="col-md-5">
+        <input id="street" name="street" type="text" formControlName="street"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="city">City</label>
+      </div>
+      <div class="col-md-5">
+        <input id="city"  name="city" type="text" formControlName="city"/>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="myGroup.dirty && myGroup.invalid">
+    Invalida Data
+  </div>
+  <input type="submit"  />
+</form>
+
+
