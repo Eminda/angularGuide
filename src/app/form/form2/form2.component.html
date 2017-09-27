@@ -1,0 +1,34 @@
+<h1>Form 2</h1>
+<form #f="ngForm" (submit)="submitForm(f.value)" style="padding-left: 20px">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="name">Name</label>
+    </div>
+    <div class="col-md-5">
+      <input id="name" name="UserName" type="text" ngModel/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="tel">Tel</label>
+    </div>
+    <div class="col-md-5">
+      <input id="tel" name="telephone" type="text" ngModel/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="birthYear">Birth Year</label>
+    </div>
+    <div class="col-md-5">
+      <input id="birthYear" name="BirthYear" type="text" ngModel/>
+    </div>
+  </div>
+
+
+  <input type="submit" value="Submit" />
+</form>
+
+
