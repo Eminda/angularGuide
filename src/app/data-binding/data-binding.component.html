@@ -1,0 +1,34 @@
+<div>
+  {{heading}}
+
+  <p [class]="paragraphClasses">
+    I am going to be formated
+  </p>
+
+  <br>
+
+  <input [value]="value"/>
+  {{value}}
+
+  <br>
+  <br>
+
+  <input [value]="valueWithEvent" #f (keyup)="valueWithEvent = f.value">
+  <!--<input [value]="username" (keyup)="username = $event.target.value">-->
+  {{valueWithEvent}}
+
+  <br>
+  <br>
+
+
+  <input [ngModel]="ngModelValue" />  {{ngModelValue}}
+  <br>
+  <br>
+
+  <input [(ngModel)]="ngModelValueWithEvent" />  {{ngModelValueWithEvent}}
+  {{ngModelValueWithEvent}}
+
+  <br>
+  <br>
+
+</div>
