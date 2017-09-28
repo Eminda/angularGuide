@@ -1,4 +1,4 @@
-<h1>Form 5</h1>
+<h1>Form 5: NgForm with FormGrouping Inside this is</h1>
 <form #f="ngForm"  (submit)="submitForm(f.value,f.valid)" style="padding-left: 20px">
   <div class="row">
     <div class="col-md-3">
@@ -14,7 +14,7 @@
       <label for="tel">Tel</label>
     </div>
     <div class="col-md-5">
-      <input id="tel" #tel="ngModel" name="telephone" type="text" pattern="[0-9]*" ngModel/>
+      <input id="tel" #tel="ngModel" name="telephone" type="text" pattern="[0-9]*" ngModel required=""/>
     </div>
   </div>
 

@@ -1,0 +1,44 @@
+<h1>Form 7: Reactive Form this is : Require ReactiveFormsModule</h1>
+<form style="padding-left: 20px" [formGroup]="myGroup" (submit)="submitForm(myGroup)">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="name">Name</label>
+    </div>
+    <div class="col-md-2">
+      <input id="name" name="name" type="text" formControlName="userName" required/>
+    </div>
+    <!--Below below-->
+    <div
+      class="error"
+      *ngIf="myGroup.get('userName').hasError('required') && myGroup.get('userName').touched">
+      Name is required
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="tel">Tel</label>
+    </div>
+    <div class="col-md-5">
+      <input id="tel" name="telephone" type="text" formControlName="telephone" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="birthYear">Birth Year</label>
+    </div>
+    <div class="col-md-5">
+      <input id="birthYear" name="birthYear" type="text" formControlName="birthYear"/>
+    </div>
+  </div>
+
+  <div *ngIf="myGroup.invalid">
+    Invalid yet the form is..
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+
