@@ -24,6 +24,8 @@ import {AngularServicesComponent} from './angular-services/angular-services.comp
 import {Demo1Component} from './angular-services/demo1/demo1.component';
 import {Demo2Component} from './angular-services/demo2/demo2.component';
 import {ValueStoreService} from "./angular-services/value-store.service";
+import {HttpComponent} from './http/http.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 const appRoutes: Routes = [
   {path: 'directive', component: AngularDirectivesComponent},
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
     {path: 'demo2', component: Demo2Component}
   ]
   },
+  {path: 'http', component: HttpComponent}
 ];
 
 
@@ -71,16 +74,17 @@ const appRoutes: Routes = [
     Form9Component,
     AngularServicesComponent,
     Demo1Component,
-    Demo2Component
+    Demo2Component,
+    HttpComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(
       appRoutes
       // ,
       // {enableTracing: true} // <-- debugging purposes only
-    ), ReactiveFormsModule
+    ), ReactiveFormsModule, HttpClientModule
   ],
-  providers: [ValueStoreService],
+  providers: [ValueStoreService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {
