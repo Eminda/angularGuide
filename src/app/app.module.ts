@@ -17,9 +17,13 @@ import {Form4Component} from './form/form4/form4.component';
 import {BirthYearDirective} from './form/form4/birth-year.directive';
 import {Form5Component} from './form/form5/form5.component';
 import {Form6Component} from './form/form6/form6.component';
-import { Form7Component } from './form/form7/form7.component';
-import { Form8Component } from './form/form8/form8.component';
-import { Form9Component } from './form/form9/form9.component';
+import {Form7Component} from './form/form7/form7.component';
+import {Form8Component} from './form/form8/form8.component';
+import {Form9Component} from './form/form9/form9.component';
+import {AngularServicesComponent} from './angular-services/angular-services.component';
+import {Demo1Component} from './angular-services/demo1/demo1.component';
+import {Demo2Component} from './angular-services/demo2/demo2.component';
+import {ValueStoreService} from "./angular-services/value-store.service";
 
 const appRoutes: Routes = [
   {path: 'directive', component: AngularDirectivesComponent},
@@ -36,7 +40,13 @@ const appRoutes: Routes = [
     {path: 'form8', component: Form8Component},
     {path: 'form9', component: Form9Component}
   ]
-  }
+  },
+  {
+    path: 'angularService', component: AngularServicesComponent, children: [
+    {path: 'demo1', component: Demo1Component},
+    {path: 'demo2', component: Demo2Component}
+  ]
+  },
 ];
 
 
@@ -58,7 +68,10 @@ const appRoutes: Routes = [
     Form6Component,
     Form7Component,
     Form8Component,
-    Form9Component
+    Form9Component,
+    AngularServicesComponent,
+    Demo1Component,
+    Demo2Component
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(
@@ -67,7 +80,7 @@ const appRoutes: Routes = [
       // {enableTracing: true} // <-- debugging purposes only
     ), ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ValueStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
