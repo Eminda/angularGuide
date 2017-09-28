@@ -26,6 +26,8 @@ import {Demo2Component} from './angular-services/demo2/demo2.component';
 import {ValueStoreService} from "./angular-services/value-store.service";
 import {HttpComponent} from './http/http.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {PipeComponent} from './pipe/pipe.component';
+import {FilterPipePipe} from './pipe/filter-pipe.pipe';
 
 const appRoutes: Routes = [
   {path: 'directive', component: AngularDirectivesComponent},
@@ -49,7 +51,8 @@ const appRoutes: Routes = [
     {path: 'demo2', component: Demo2Component}
   ]
   },
-  {path: 'http', component: HttpComponent}
+  {path: 'http', component: HttpComponent},
+  {path: 'pipe', component: PipeComponent}
 ];
 
 
@@ -75,7 +78,9 @@ const appRoutes: Routes = [
     AngularServicesComponent,
     Demo1Component,
     Demo2Component,
-    HttpComponent
+    HttpComponent,
+    PipeComponent,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(
@@ -84,7 +89,7 @@ const appRoutes: Routes = [
       // {enableTracing: true} // <-- debugging purposes only
     ), ReactiveFormsModule, HttpClientModule
   ],
-  providers: [ValueStoreService, HttpClient],
+  providers: [ValueStoreService, HttpClient, FilterPipePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

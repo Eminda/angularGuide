@@ -1,0 +1,23 @@
+Without Pipe
+<br>
+{{data}}
+<br>
+<br>
+With Pipe
+<br>
+{{data|json }}
+<br>
+<br>
+For loop without filtering of pipes
+<div *ngFor="let person of people">
+  {{person|json}}
+</div>
+<br>
+<br>
+For loop With Custom Pipe
+<input [(ngModel)]="name"/>
+<br>
+<br>
+<div *ngFor="let person of people|filterPipe:name">
+  {{person|json}}
+</div>
