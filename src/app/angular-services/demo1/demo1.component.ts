@@ -8,19 +8,27 @@ import {ValueStoreService} from "../value-store.service";
 })
 export class Demo1Component implements OnInit {
   value: Number = 0;
+  otherValue: Number = 0;
 
   constructor(private valueService: ValueStoreService) {
   }
 
   ngOnInit() {
-    this.load();
+    this.valueService.getValue().subscribe(next => {
+      this.value = next;
+    });
   }
 
   save(value: any) {
     this.valueService.setValue(value);
   }
 
-  load() {
-    this.value = this.valueService.getValue();
+  saveOther(value: any) {
+    this.valueService.setOtherValue(value);
   }
+
+  load() {
+    this.otherValue = this.valueService.getOtherValue();
+  }
+
 }

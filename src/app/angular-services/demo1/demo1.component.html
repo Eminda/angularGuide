@@ -1,8 +1,18 @@
 <h2>Demo 1</h2>
+Value
+<br>
 <input type="text" #f>
 <br>
 Current Value {{value}}
 <br>
+<br>
+Other Value
+<br>
+<input type="text" #o>
+<br>
+Current Value {{otherValue}}
+<br>
 <button (click)="save(f.value)">Save value</button>
+<button (click)="saveOther(o.value)">Save Other Value</button>
 <button (click)="load()">Load Value</button>
 
