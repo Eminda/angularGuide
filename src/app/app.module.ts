@@ -28,6 +28,8 @@ import {HttpComponent} from './http/http.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {PipeComponent} from './pipe/pipe.component';
 import {FilterPipePipe} from './pipe/filter-pipe.pipe';
+import { CommunicateBetweenComponentsComponent } from './communicate-between-components/communicate-between-components.component';
+import { BankLedgerComponent } from './communicate-between-components/bank-ledger/bank-ledger.component';
 
 const appRoutes: Routes = [
   {path: 'directive', component: AngularDirectivesComponent},
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
   ]
   },
   {path: 'http', component: HttpComponent},
-  {path: 'pipe', component: PipeComponent}
+  {path: 'pipe', component: PipeComponent},
+  {path: 'event', component: CommunicateBetweenComponentsComponent}
 ];
 
 
@@ -80,7 +83,9 @@ const appRoutes: Routes = [
     Demo2Component,
     HttpComponent,
     PipeComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    CommunicateBetweenComponentsComponent,
+    BankLedgerComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(

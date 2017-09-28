@@ -1,0 +1,11 @@
+<div class="col-md-6">
+  <h2>Fine Customer </h2><br>
+  <input #fine />
+  <br>
+  <button (click)="fineCustomer(fine.value)">Fine</button>
+  <div *ngFor="let leg of ledger">
+    {{leg}}
+  </div>
+  <br>
+  <br>
+</div>
