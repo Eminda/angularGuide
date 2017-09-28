@@ -22,7 +22,9 @@ export class HttpComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.alive = false;
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   requestGet() {
